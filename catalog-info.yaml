@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: qet0usoen-nodejs-gitops
+  description: This is GitOps manifest for qet0usoen-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: qet0usoen-nodejs
+    janus-idp.io/tekton: qet0usoen-nodejs 
+    backstage.io/kubernetes-id: qet0usoen-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:qet0usoen-nodejs
